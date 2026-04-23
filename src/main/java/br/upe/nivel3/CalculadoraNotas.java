@@ -8,15 +8,23 @@ public class CalculadoraNotas {
 
     public void adicionarNota(double nota) {
         // Implemente
+        notas.add(nota);
     }
     
     public int quantidadeNotas() {
         // Implemente
-        return 0;
+        return notas.size();
     }
     
     public double calcularMedia() {
         // Implemente a lógica de média (cuidado com divisão por zero)
-        return 0.0;
+        double soma = 0;
+        if (notas.isEmpty()){
+            return 0.0;
+        } else{
+            for (double n : notas) soma += n;
+            return soma / notas.size();
+        }
+
     }
 }
